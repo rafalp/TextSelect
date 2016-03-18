@@ -1,0 +1,59 @@
+#text-select-bounding {
+  // give bounding some basic style so its visible
+  border: 1px dashed #ccc;
+  border-radius: 2px;
+
+  position: absolute;
+  z-index: 2000;
+
+  // hide the bounding box by default
+  display: none;
+
+  // don't catch any clicks
+  pointer-events: none;
+}
+
+
+#text-select-tooltip {
+  // position tooltip absolutely and outside the viewport by default
+  position: absolute;
+  z-index: 2010;
+  top: -1000px;
+}
+
+#text-select-tooltip-body {
+  background: #111;
+  border-radius: 3px;
+  padding: 6px 12px;
+
+  color: #fff;
+  text-align: center;
+}
+
+#text-select-tooltip-arrow {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+
+  border-top: 6px solid #111;
+  margin: 0px auto;
+}
+
+// fade out default text a little
+#selectable-text {
+  color: #666;
+}
+
+// change selection style so its easier to see bounding box
+#selectable-text p::-moz-selection {
+  background: #efefef;
+
+  color: #000;
+}
+
+#selectable-text p::selection {
+  background: #efefef;
+
+  color: #000;
+}

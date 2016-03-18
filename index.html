@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TextSelect</title>
+    <link href="html/bootstrap.min.css" rel="stylesheet">
+    <link href="html/textselect.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="page-header">
+      <div class="container">
+        <h1>TextSelect</h1>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <p class="lead">This text is not selectable. Don't even bother. Try the one within the border instead:</p>
+
+      <div class="panel panel-default">
+        <div id="selectable-text" class="panel-body">
+
+          <p>Nunc rutrum mollis turpis, ut vehicula elit. Integer cursus mauris libero, et rutrum orci consectetur ut. Donec iaculis interdum gravida. Vestibulum blandit interdum mattis. Maecenas eget risus vitae urna posuere pulvinar. Aenean enim quam, tristique quis ex a, porttitor elementum risus. Mauris eu egestas leo. Maecenas vulputate lectus sit amet bibendum gravida. Ut mauris eros, ullamcorper id pharetra sed, sagittis a lacus. Nam vestibulum consectetur libero sed fermentum. Nam vel turpis dictum, ornare mauris sit amet, pretium nisi. Fusce sed dolor placerat, imperdiet mauris ultricies, faucibus metus.</p>
+
+          <p>Suspendisse potenti. Etiam auctor fermentum felis, in varius libero suscipit a. Donec a sem pretium, lacinia lectus tincidunt, pellentesque metus. Maecenas ac cursus erat. Integer non hendrerit neque. Nulla quis efficitur ante, sed varius purus. Nullam convallis vel massa non aliquam. Phasellus gravida tincidunt risus, sed finibus metus pulvinar et. Mauris sed justo volutpat, venenatis enim nec, rhoncus sem. Morbi sollicitudin facilisis lectus, ac egestas nunc aliquet nec. Maecenas a ultricies libero. Sed ornare orci lobortis augue pulvinar, a aliquet neque laoreet.</p>
+
+          <p>Donec mattis semper luctus. Donec id eros malesuada, pellentesque ante sit amet, luctus nisi. Suspendisse vitae consequat sem. Integer ornare justo auctor elementum tempus. Donec elit arcu, rhoncus sit amet lorem quis, molestie ornare ante. Vivamus sit amet euismod diam. Morbi non nisi et magna rutrum gravida sed at massa. Sed sed ornare sapien. Nullam consequat varius ante, vehicula rhoncus ante pellentesque in. Sed suscipit, est sit amet imperdiet euismod, lectus diam laoreet risus, a fringilla ante lorem vitae felis. Etiam venenatis feugiat euismod.</p>
+
+          <p>Nullam scelerisque nisi vel nunc feugiat, ut tempus risus dictum. Ut rutrum euismod est eu mattis. Mauris nibh leo, efficitur ac purus id, eleifend lobortis neque. Aliquam mattis sollicitudin sem non porttitor. Etiam ligula erat, ornare a felis sed, porta convallis nulla. Ut mattis, enim vel aliquet faucibus, lacus nunc fermentum est, quis sollicitudin justo odio vel lorem. Nunc euismod, ex eget ullamcorper gravida, turpis dolor ornare tellus, eu blandit est mauris a metus. Mauris lobortis a nunc id cursus. Sed tincidunt non turpis eleifend interdum. Quisque nisl quam, euismod et dapibus ac, condimentum convallis quam.</p>
+
+          <p>Nam in sodales erat. Vestibulum nunc eros, auctor a tincidunt et, feugiat id nulla. Morbi eu sem ligula. Nulla rutrum orci non fringilla tempor. Sed sed mollis nibh. Aliquam maximus risus ante, at ultricies mi aliquet quis. Quisque lacinia in enim a sollicitudin. Duis volutpat eget urna quis elementum. Aliquam sodales orci purus. Pellentesque dui lectus, auctor vitae ex ac, sodales iaculis sem.</p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <script src="html/textselect.js"></script>
+    <script>
+      var selection = document.getElementById('selectable-text');
+      var obj = TextSelect(selection);
+    </script>
+  </body>
+</html>

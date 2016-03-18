@@ -1,0 +1,39 @@
+#text-select-bounding {
+  border: 1px dashed #ccc;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 2000;
+  display: none;
+  pointer-events: none;
+}
+#text-select-tooltip {
+  position: absolute;
+  z-index: 2010;
+  top: -1000px;
+}
+#text-select-tooltip-body {
+  background: #111;
+  border-radius: 3px;
+  padding: 6px 12px;
+  color: #fff;
+  text-align: center;
+}
+#text-select-tooltip-arrow {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #111;
+  margin: 0px auto;
+}
+#selectable-text {
+  color: #666;
+}
+#selectable-text p::-moz-selection {
+  background: #efefef;
+  color: #000;
+}
+#selectable-text p::selection {
+  background: #efefef;
+  color: #000;
+}
