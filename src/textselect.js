@@ -50,60 +50,41 @@ var TextSelect = function(container) {
     if(selection) {
       var range = selection.getRangeAt(0);
 
+      // don't handle collapsed selections
+      if (range.collapsed) {
+        fail();
+        return;
+      }
+
       // validate that selected element is child of container
       if (!container.contains(range.commonAncestorContainer)) {
         fail();
         return;
       }
 
+      // get selection rectage
+      var src = range.getBoundingClientRect();
       var rect = {
-        // min-max props for ranges
-        // we are using 40k starting point cos its abysmally complicated
-        // to get real document width/height
-        top: 40000,
-        left: 40000,
-        bottom: 0,
-        right: 0,
+        top: src.top,
+        left: src.left,
 
-        // final width and height that will be computed
-        width: 0,
-        height: 0
+        width: src.width,
+        height: src.height
       };
-
-      // iterate rects that have selections
-      var rects = range.getClientRects();
-      for (var i = 0; i < rects.length; i ++) {
-        var r = rects[i];
-
-        if (r.top < rect.top) rect.top = r.top;
-        if (r.left < rect.left) rect.left = r.left;
-        if (r.bottom > rect.bottom) rect.bottom = r.bottom;
-        if (r.right > rect.right) rect.right = r.right;
-      }
-
-      // compute final width and height for bounding box
-      rect.width = rect.right - rect.left;
-      rect.height = rect.bottom - rect.top;
 
       // correct the top and left position with the scroll
       var doc = document.documentElement;
       rect.left += (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
       rect.top += (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
 
-      // see if selection is greater than 5 px
-      // we are doing this because rects positions are floats, not integers
-      // so we can't expect rect dimensions to be zero
-      if (rect.width > 5 && rect.height > 5) {
-        bounding.style.top = rect.top + 'px';
-        bounding.style.left = rect.left + 'px';
-        bounding.style.width = rect.width + 'px';
-        bounding.style.height = rect.height + 'px';
+      // finally show selection
+      bounding.style.top = rect.top + 'px';
+      bounding.style.left = rect.left + 'px';
+      bounding.style.width = rect.width + 'px';
+      bounding.style.height = rect.height + 'px';
 
-        bounding.style.display = 'block';
-        showTooltip(rect);
-      } else {
-        fail();
-      }
+      bounding.style.display = 'block';
+      showTooltip(rect);
     } else {
       fail();
     }
